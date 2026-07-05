@@ -1,0 +1,29 @@
+{
+  "name": "RTL Design Cohort",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "rtl"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "mshr-h.veriloghdl",
+        "eamodio.gitlens",
+        "github.copilot",
+        "github.copilot-chat"
+      ]
+    }
+  },
+
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y verilator yosys iverilog gtkwave make",
+  
+  "remoteUser": "vscode"
+}
